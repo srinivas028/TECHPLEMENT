@@ -1,9 +1,9 @@
 # TECHPLEMENT
- # DEPLOYING WORDPRESS AND MYSQL IN A SINGLE EC2 INSTANCE
+ # DEPLOYING WORDPRESS AND MYSQL IN A SINGLE AND DIFFERENT EC2 INSTANCES
 PREREQUISITES:
 # aws account
 # t2.micro
-
+# security groups
 # STEPS 
 1. Create a ec2 instance with specific name.
 2. create a key pair and allow the *http* ,*https* traffic and finally take *t2.micro* size, then launch instance.
@@ -52,3 +52,7 @@ PREREQUISITES:
 18. Give the details of databases and user in the wordpress and then run installation by creating a file and copying the php text in the wordpress directory
 
 19. That's it now we can access wordpress with our own database.
+
+# SAME PROCESS FOR MULTIPLE INSTANCES AND BIND ADDRESS SHOULD BE DEFINED.
+# GO THROUGH @MICROSERVICE FILE FOR DETAILED PROCESS.
+
