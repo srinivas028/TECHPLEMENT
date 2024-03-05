@@ -1,0 +1,58 @@
+Task1 - MICROSERVICES ARCHITECTURE
+
+STEPS FOLLOWED : # TECHPLEMENT
+# DEPLOYING WORDPRESS AND MYSQL IN A VARIOUS EC2 INSTANCES
+PREREQUISITES:
+# aws account
+# t2.micro
+#security groups
+
+#STEPS
+MYSQL-instance
+1.	First launch two instances with Ubuntu VM with unique names taking t2.micro size and allowing traffic http , https and all traffic.
+
+2.	Now connect to one instance and connect to root user by typing sudo -i .
+
+3.	Firstly install update the packages by: apt update -y .
+
+4.	Then install mysql by command: apt install mysql-server -y.
+
+5.	Now login to the mysql server by root user with command: mysql -u root .
+
+6.	Create a user with a password by: CREATE USER 'name_user'@'%' IDENTIFIED BY 'password@123';
+
+7.	Now create a database: CREATE DATABASE wordpress;
+
+8.	Give the permissions to the database and user : GRANT ALL PRIVILEGES ON wordpress.* TO 'name_user'@'%';
+
+9.	Then type FLUSH PRIVILEGES; to load permissions fastly.
+
+10.	Exit to the root user by command : exit; 
+
+11.	Now change bind address to 0.0.0.0 by : sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf 
+
+WORDPRESS- instance
+1.	Connect to the Wordpress instance and connect to the root user by sudo -I.
+
+2.	Firstly update the packages by: apt update -y.
+
+3.	Now install apache2, php-mysql and php by :apt install apache2 php php-mysqlnd.
+
+4.	Now install wordpress by : wget https://wordpress.org/latest.tar.gz
+
+5.	Unzip by tar file by using :tar -xvzf latest.tar.gz
+
+6.	Move the wordpress installed by :mv wordpress/  /var/www/html.
+
+7.	Open wordpress public ip in separate tab and check for apache and wordpress(for wordpress public ip/wordpress should be used )
+
+8.	Now fill out the mysql database, user ,password and host ip and then confirm it.
+
+9.	Copy the php text and create a file with wp-config.php and paste it.
+
+10.	Now run the installations give the site name ,username , password and mail etc
+
+11.	That’s it now we configured mysql and wordpress.
+
+
+
